@@ -1,5 +1,5 @@
 
-function UseCard({props}) {
+export function UseCard({props}) {
     return (
         <div>
             <p>Name: {props.name}</p>
@@ -8,4 +8,13 @@ function UseCard({props}) {
     );
 }
 
-export default UseCard
+function UseCard1({props}) {
+    return (
+        <>
+            <p>City: {props.chilren}</p>
+        </>
+    );
+}
+
+
+

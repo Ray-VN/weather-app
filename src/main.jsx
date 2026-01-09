@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App, { Footer } from './components/Base'
+import { SearchPage } from './pages/SearchPage'
 
 
 
@@ -12,8 +13,8 @@ const user = {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
-    <Footer />
-    version
+    {/* <App />
+    <Footer /> */}
+    <SearchPage />
   </StrictMode>,
 )

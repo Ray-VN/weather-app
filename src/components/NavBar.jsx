@@ -1,19 +1,17 @@
-import './NavBar.css'
+import "./Navbar.css";
 
-export function NavBar() {
-    return (
-        <div className="topnav">
-            <a className="active" href="#home">
-                Home
-            </a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <div class="search-container">
-                <form action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search" />
-                <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-        </div>
-    )
+export default function Navbar() {
+  return (
+    <nav className="navbar">
+      <div className="navbar__logo">
+        WeatherApp
+      </div>
+
+      <ul className="navbar__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/forecast">Forecast</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  );
 }

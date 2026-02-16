@@ -1,6 +1,6 @@
 import "./SearchBar.css"
 
-export function WeatherSearch() {
+export function SearchBar() {
     return (
         <div className="search-box">
             <input type="text" placeholder="Search..."></input>

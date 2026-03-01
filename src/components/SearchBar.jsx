@@ -4,7 +4,7 @@ import { useState } from "react";
 export function SearchBar() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
-  const API_KEY = "zz";
+  const API_KEY = "YOUR_API";
 
   const handleSearch = async () => {
     const response = await fetch(
@@ -15,22 +15,34 @@ export function SearchBar() {
   };
 
   return (
-    <div className="search-box">
-      <input
-        type="text"
-        placeholder="Search..."
-        value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
-      ></input>
-      <button onClick={handleSearch}>Search</button>
+    <>
+      <div className="search-box">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={keyword}
+          onChange={(e) => setKeyword(e.target.value)}
+        ></input>
+        <button onClick={handleSearch}>Search</button>
+      </div>
 
       <div>
-        {/* {results.map((item, index) => (
-          <p key={index}>{item.name}</p>
-        ))} */}
-
-        {results ? <p>{results.name}</p> : <p>No data</p>}
+        {results ? (
+          <p>
+            {results ? (
+              Object.keys(results).map((key) => (
+                <p key={key}>
+                  {key}: {String(results[key])}
+                </p>
+              ))
+            ) : (
+              <p>No data</p>
+            )}
+          </p>
+        ) : (
+          <p>No data</p>
+        )}
       </div>
-    </div>
+    </>
   );
 }

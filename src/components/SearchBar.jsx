@@ -4,7 +4,9 @@ import { useState } from "react";
 export function SearchBar() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
-  const API_KEY = "YOUR_API";
+  // const API_KEY = "YOUR_API";
+  const API_KEY = "65b0bd7e187fa53a715d25a396e03000";
+
 
   const handleSearch = async () => {
     const response = await fetch(
@@ -26,7 +28,7 @@ export function SearchBar() {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      <div>
+      <div className="content">
         {results ? (
           <p>
             {results ? (
